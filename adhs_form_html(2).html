@@ -1,56 +1,267 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADHS-Fremdbeurteilungsskala (Online-Formular)</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ADHS-Fremdbeurteilungsskala (ADHS-FB)</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1 { margin-bottom: 10px; }
-    .question { margin-bottom: 20px; }
-    .question label { display: block; font-weight: bold; margin-bottom: 8px; }
-    .options { display: flex; gap: 15px; }
+    body{font-family:Arial,Helvetica,sans-serif;margin:16px;line-height:1.4}
+    h1{font-size:1.4rem;margin-bottom:8px}
+    h2{margin-top:18px}
+    .question{margin:14px 0;padding:8px;border-radius:6px}
+    .question label{display:block;font-weight:600;margin-bottom:6px}
+    .options{display:flex;gap:12px;flex-wrap:wrap}
+    .options label{display:inline-flex;align-items:center;gap:6px}
+    button[type="submit"]{margin-top:18px;padding:10px 16px;border:none;border-radius:6px;background:#0b63c6;color:#fff;font-weight:700}
+    @media (max-width:480px){ .options{gap:8px;font-size:0.95rem} button{width:100%}}
   </style>
 </head>
 <body>
   <h1>ADHS-Fremdbeurteilungsskala (ADHS-FB)</h1>
 
   <form action="https://formsubmit.co/fantant@posteo.de" method="POST">
+    <!-- FormSubmit settings -->
     <input type="hidden" name="_subject" value="Neue ADHS-FB Einsendung" />
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_template" value="table" />
 
     <h2>Allgemeine Angaben</h2>
-    <label>Datum:<br /><input type="date" name="datum" /></label><br /><br />
-    <label>Ihr Name:<br /><input type="text" name="ihr_name" /></label><br /><br />
-    <label>Name der zu testenden Person:<br /><input type="text" name="test_person" /></label><br /><br />
-    <label>Beziehung zur Person:<br /><input type="text" name="beziehung" /></label><br /><br />
-    <label>Seit wann kennen Sie die Person?<br /><input type="text" name="dauer_kenntnis" /></label>
+    <label>Datum:<br/><input type="date" name="datum" required></label>
+    <label>Ihr Name:<br/><input type="text" name="ihr_name" required></label>
+    <label>Name der zu testenden Person:<br/><input type="text" name="test_person" required></label>
+    <label>Beziehung zur Person:<br/><input type="text" name="beziehung" required></label>
+    <label>Seit wann kennen Sie die Person?<br/><input type="text" name="dauer_kenntnis" required></label>
 
     <h2>Bitte beantworten Sie die folgenden Fragen</h2>
-    <p>Antwortoptionen: 0 = Nie | 1 = Selten | 2 = Oft | 3 = Sehr oft</p>
+    <p>Antwortoptionen: <strong>0 = Nie</strong> | <strong>1 = Selten</strong> | <strong>2 = Oft</strong> | <strong>3 = Sehr oft</strong></p>
 
-    <!-- Questions 1-22 -->
-    <div class="question"><label>1. Hat die Person Schwierigkeiten, sich bei einer Arbeit, die längere Zeit Aufmerksamkeit erfordert, auf Details zu konzentrieren, oder macht sie leicht Flüchtigkeitsfehler?</label><div class="options"><label><input type='radio' name='q1' value='0' required /> 0</label><label><input type='radio' name='q1' value='1' /> 1</label><label><input type='radio' name='q1' value='2' /> 2</label><label><input type='radio' name='q1' value='3' /> 3</label></div></div>
-<div class="question"><label>2. Hat die Person Schwierigkeiten, die Aufmerksamkeit bei langweiligen oder schwierigen Aufgaben aufrechtzuerhalten?</label><div class="options"><label><input type='radio' name='q2' value='0' required /> 0</label><label><input type='radio' name='q2' value='1' /> 1</label><label><input type='radio' name='q2' value='2' /> 2</label><label><input type='radio' name='q2' value='3' /> 3</label></div></div>
-<div class="question"><label>3. Wirkt die Person unruhig oder zappelig (z. B. spielt mit den Händen, rutscht auf dem Stuhl herum)?</label><div class="options"><label><input type='radio' name='q3' value='0' required /> 0</label><label><input type='radio' name='q3' value='1' /> 1</label><label><input type='radio' name='q3' value='2' /> 2</label><label><input type='radio' name='q3' value='3' /> 3</label></div></div>
-<div class="question"><label>4. Vergisst die Person Verabredungen, Termine oder telefonische Rückrufe?</label><div class="options"><label><input type='radio' name='q4' value='0' required /> 0</label><label><input type='radio' name='q4' value='1' /> 1</label><label><input type='radio' name='q4' value='2' /> 2</label><label><input type='radio' name='q4' value='3' /> 3</label></div></div>
-<div class="question"><label>5. Vermeidet oder verzögert die Person Aufgaben, die längere geistige Anstrengung erfordern?</label><div class="options"><label><input type='radio' name='q5' value='0' required /> 0</label><label><input type='radio' name='q5' value='1' /> 1</label><label><input type='radio' name='q5' value='2' /> 2</label><label><input type='radio' name='q5' value='3' /> 3</label></div></div>
-<div class="question"><label>6. Unterbricht oder stört die Person andere, wenn diese beschäftigt sind?</label><div class="options"><label><input type='radio' name='q6' value='0' required /> 0</label><label><input type='radio' name='q6' value='1' /> 1</label><label><input type='radio' name='q6' value='2' /> 2</label><label><input type='radio' name='q6' value='3' /> 3</label></div></div>
-<div class="question"><label>7. Hat die Person Schwierigkeiten, Dinge in Ordnung zu halten, wenn sie eine Aufgabe oder Aktivität ausführt?</label><div class="options"><label><input type='radio' name='q7' value='0' required /> 0</label><label><input type='radio' name='q7' value='1' /> 1</label><label><input type='radio' name='q7' value='2' /> 2</label><label><input type='radio' name='q7' value='3' /> 3</label></div></div>
-<div class="question"><label>8. Hat die Person Probleme, Dinge zu finden, die für Aufgaben oder Aktivitäten notwendig sind (z. B. Unterlagen, Schlüssel, Werkzeuge)?</label><div class="options"><label><input type='radio' name='q8' value='0' required /> 0</label><label><input type='radio' name='q8' value='1' /> 1</label><label><input type='radio' name='q8' value='2' /> 2</label><label><input type='radio' name='q8' value='3' /> 3</label></div></div>
-<div class="question"><label>9. Lässt sich die Person leicht durch äußere Reize ablenken?</label><div class="options"><label><input type='radio' name='q9' value='0' required /> 0</label><label><input type='radio' name='q9' value='1' /> 1</label><label><input type='radio' name='q9' value='2' /> 2</label><label><input type='radio' name='q9' value='3' /> 3</label></div></div>
-<div class="question"><label>10. Beginnt die Person viele verschiedene Aufgaben, ohne eine davon abzuschließen?</label><div class="options"><label><input type='radio' name='q10' value='0' required /> 0</label><label><input type='radio' name='q10' value='1' /> 1</label><label><input type='radio' name='q10' value='2' /> 2</label><label><input type='radio' name='q10' value='3' /> 3</label></div></div>
-<div class="question"><label>11. Hat die Person Schwierigkeiten, Anweisungen vollständig zu befolgen, selbst wenn sie die Anweisungen verstanden hat?</label><div class="options"><label><input type='radio' name='q11' value='0' required /> 0</label><label><input type='radio' name='q11' value='1' /> 1</label><label><input type='radio' name='q11' value='2' /> 2</label><label><input type='radio' name='q11' value='3' /> 3</label></div></div>
-<div class="question"><label>12. Spricht die Person übermäßig viel, auch wenn es unpassend ist?</label><div class="options"><label><input type='radio' name='q12' value='0' required /> 0</label><label><input type='radio' name='q12' value='1' /> 1</label><label><input type='radio' name='q12' value='2' /> 2</label><label><input type='radio' name='q12' value='3' /> 3</label></div></div>
-<div class="question"><label>13. Hat die Person Schwierigkeiten, still zu sitzen, wenn dies erwartet wird?</label><div class="options"><label><input type='radio' name='q13' value='0' required /> 0</label><label><input type='radio' name='q13' value='1' /> 1</label><label><input type='radio' name='q13' value='2' /> 2</label><label><input type='radio' name='q13' value='3' /> 3</label></div></div>
-<div class="question"><label>14. Wirkt die Person so, als wäre sie „immer in Bewegung“ oder „getrieben“?</label><div class="options"><label><input type='radio' name='q14' value='0' required /> 0</label><label><input type='radio' name='q14' value='1' /> 1</label><label><input type='radio' name='q14' value='2' /> 2</label><label><input type='radio' name='q14' value='3' /> 3</label></div></div>
-<div class="question"><label>15. Hat die Person Schwierigkeiten, zu warten, bis sie an der Reihe ist (z. B. in einer Schlange)?</label><div class="options"><label><input type='radio' name='q15' value='0' required /> 0</label><label><input type='radio' name='q15' value='1' /> 1</label><label><input type='radio' name='q15' value='2' /> 2</label><label><input type='radio' name='q15' value='3' /> 3</label></div></div>
-<div class="question"><label>16. Platzt die Person mit Antworten heraus, bevor die Frage vollständig gestellt wurde?</label><div class="options"><label><input type='radio' name='q16' value='0' required /> 0</label><label><input type='radio' name='q16' value='1' /> 1</label><label><input type='radio' name='q16' value='2' /> 2</label><label><input type='radio' name='q16' value='3' /> 3</label></div></div>
-<div class="question"><label>17. Unterbricht die Person andere häufig im Gespräch oder mischt sich ungefragt in deren Aktivitäten ein?</label><div class="options"><label><input type='radio' name='q17' value='0' required /> 0</label><label><input type='radio' name='q17' value='1' /> 1</label><label><input type='radio' name='q17' value='2' /> 2</label><label><input type='radio' name='q17' value='3' /> 3</label></div></div>
-<div class="question"><label>18. Hat die Person Schwierigkeiten, Aktivitäten ruhig und ohne übermäßige Geräusche auszuführen?</label><div class="options"><label><input type='radio' name='q18' value='0' required /> 0</label><label><input type='radio' name='q18' value='1' /> 1</label><label><input type='radio' name='q18' value='2' /> 2
+    <!-- Fragen 1–22 -->
+    <div class="question">
+      <label>1. Hat die Person Schwierigkeiten, sich bei einer Arbeit, die längere Zeit Aufmerksamkeit erfordert, auf Details zu konzentrieren, oder macht sie leicht Flüchtigkeitsfehler?</label>
+      <div class="options">
+        <label><input type="radio" name="q1" value="0" required>0</label>
+        <label><input type="radio" name="q1" value="1">1</label>
+        <label><input type="radio" name="q1" value="2">2</label>
+        <label><input type="radio" name="q1" value="3">3</label>
+      </div>
+    </div>
 
-    <br />
+    <div class="question">
+      <label>2. Hat die Person Schwierigkeiten, die Aufmerksamkeit bei langweiligen oder schwierigen Aufgaben aufrechtzuerhalten?</label>
+      <div class="options">
+        <label><input type="radio" name="q2" value="0" required>0</label>
+        <label><input type="radio" name="q2" value="1">1</label>
+        <label><input type="radio" name="q2" value="2">2</label>
+        <label><input type="radio" name="q2" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>3. Wirkt die Person unruhig oder zappelig (z. B. spielt mit den Händen, rutscht auf dem Stuhl herum)?</label>
+      <div class="options">
+        <label><input type="radio" name="q3" value="0" required>0</label>
+        <label><input type="radio" name="q3" value="1">1</label>
+        <label><input type="radio" name="q3" value="2">2</label>
+        <label><input type="radio" name="q3" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>4. Vergisst die Person Verabredungen, Termine oder telefonische Rückrufe?</label>
+      <div class="options">
+        <label><input type="radio" name="q4" value="0" required>0</label>
+        <label><input type="radio" name="q4" value="1">1</label>
+        <label><input type="radio" name="q4" value="2">2</label>
+        <label><input type="radio" name="q4" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>5. Vermeidet oder verzögert die Person Aufgaben, die längere geistige Anstrengung erfordern?</label>
+      <div class="options">
+        <label><input type="radio" name="q5" value="0" required>0</label>
+        <label><input type="radio" name="q5" value="1">1</label>
+        <label><input type="radio" name="q5" value="2">2</label>
+        <label><input type="radio" name="q5" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>6. Unterbricht oder stört die Person andere, wenn diese beschäftigt sind?</label>
+      <div class="options">
+        <label><input type="radio" name="q6" value="0" required>0</label>
+        <label><input type="radio" name="q6" value="1">1</label>
+        <label><input type="radio" name="q6" value="2">2</label>
+        <label><input type="radio" name="q6" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>7. Hat die Person Schwierigkeiten, Dinge in Ordnung zu halten, wenn sie eine Aufgabe oder Aktivität ausführt?</label>
+      <div class="options">
+        <label><input type="radio" name="q7" value="0" required>0</label>
+        <label><input type="radio" name="q7" value="1">1</label>
+        <label><input type="radio" name="q7" value="2">2</label>
+        <label><input type="radio" name="q7" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>8. Hat die Person Probleme, Dinge zu finden, die für Aufgaben oder Aktivitäten notwendig sind (z. B. Unterlagen, Schlüssel, Werkzeuge)?</label>
+      <div class="options">
+        <label><input type="radio" name="q8" value="0" required>0</label>
+        <label><input type="radio" name="q8" value="1">1</label>
+        <label><input type="radio" name="q8" value="2">2</label>
+        <label><input type="radio" name="q8" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>9. Lässt sich die Person leicht durch äußere Reize ablenken?</label>
+      <div class="options">
+        <label><input type="radio" name="q9" value="0" required>0</label>
+        <label><input type="radio" name="q9" value="1">1</label>
+        <label><input type="radio" name="q9" value="2">2</label>
+        <label><input type="radio" name="q9" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>10. Beginnt die Person viele verschiedene Aufgaben, ohne eine davon abzuschließen?</label>
+      <div class="options">
+        <label><input type="radio" name="q10" value="0" required>0</label>
+        <label><input type="radio" name="q10" value="1">1</label>
+        <label><input type="radio" name="q10" value="2">2</label>
+        <label><input type="radio" name="q10" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>11. Hat die Person Schwierigkeiten, Anweisungen vollständig zu befolgen, selbst wenn sie die Anweisungen verstanden hat?</label>
+      <div class="options">
+        <label><input type="radio" name="q11" value="0" required>0</label>
+        <label><input type="radio" name="q11" value="1">1</label>
+        <label><input type="radio" name="q11" value="2">2</label>
+        <label><input type="radio" name="q11" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>12. Spricht die Person übermäßig viel, auch wenn es unpassend ist?</label>
+      <div class="options">
+        <label><input type="radio" name="q12" value="0" required>0</label>
+        <label><input type="radio" name="q12" value="1">1</label>
+        <label><input type="radio" name="q12" value="2">2</label>
+        <label><input type="radio" name="q12" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>13. Hat die Person Schwierigkeiten, still zu sitzen, wenn dies erwartet wird?</label>
+      <div class="options">
+        <label><input type="radio" name="q13" value="0" required>0</label>
+        <label><input type="radio" name="q13" value="1">1</label>
+        <label><input type="radio" name="q13" value="2">2</label>
+        <label><input type="radio" name="q13" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>14. Wirkt die Person so, als wäre sie „immer in Bewegung“ oder „getrieben“?</label>
+      <div class="options">
+        <label><input type="radio" name="q14" value="0" required>0</label>
+        <label><input type="radio" name="q14" value="1">1</label>
+        <label><input type="radio" name="q14" value="2">2</label>
+        <label><input type="radio" name="q14" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>15. Hat die Person Schwierigkeiten, zu warten, bis sie an der Reihe ist (z. B. in einer Schlange)?</label>
+      <div class="options">
+        <label><input type="radio" name="q15" value="0" required>0</label>
+        <label><input type="radio" name="q15" value="1">1</label>
+        <label><input type="radio" name="q15" value="2">2</label>
+        <label><input type="radio" name="q15" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>16. Platzt die Person mit Antworten heraus, bevor die Frage vollständig gestellt wurde?</label>
+      <div class="options">
+        <label><input type="radio" name="q16" value="0" required>0</label>
+        <label><input type="radio" name="q16" value="1">1</label>
+        <label><input type="radio" name="q16" value="2">2</label>
+        <label><input type="radio" name="q16" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>17. Unterbricht die Person andere häufig im Gespräch oder mischt sich ungefragt in deren Aktivitäten ein?</label>
+      <div class="options">
+        <label><input type="radio" name="q17" value="0" required>0</label>
+        <label><input type="radio" name="q17" value="1">1</label>
+        <label><input type="radio" name="q17" value="2">2</label>
+        <label><input type="radio" name="q17" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>18. Hat die Person Schwierigkeiten, Aktivitäten ruhig und ohne übermäßige Geräusche auszuführen?</label>
+      <div class="options">
+        <label><input type="radio" name="q18" value="0" required>0</label>
+        <label><input type="radio" name="q18" value="1">1</label>
+        <label><input type="radio" name="q18" value="2">2</label>
+        <label><input type="radio" name="q18" value="3">3</label>
+      </div>
+    </div>
+
+    <h3>Zusätzliche Fragen</h3>
+
+    <div class="question">
+      <label>19. Diese Schwierigkeiten (Fragen 1-18) bestanden schon vor dem 12. Lebensjahr.</label>
+      <div class="options">
+        <label><input type="radio" name="q19" value="0" required>0</label>
+        <label><input type="radio" name="q19" value="1">1</label>
+        <label><input type="radio" name="q19" value="2">2</label>
+        <label><input type="radio" name="q19" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>20. Diese Schwierigkeiten bestehen nicht nur bei der Arbeit, sondern auch in anderen Lebenssituationen (z. B. Familie, Freunde, Freizeit).</label>
+      <div class="options">
+        <label><input type="radio" name="q20" value="0" required>0</label>
+        <label><input type="radio" name="q20" value="1">1</label>
+        <label><input type="radio" name="q20" value="2">2</label>
+        <label><input type="radio" name="q20" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>21. Die Lebensqualität der Person scheint dadurch gemindert zu sein.</label>
+      <div class="options">
+        <label><input type="radio" name="q21" value="0" required>0</label>
+        <label><input type="radio" name="q21" value="1">1</label>
+        <label><input type="radio" name="q21" value="2">2</label>
+        <label><input type="radio" name="q21" value="3">3</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>22. Diese Umstände haben bei der Person bereits zu Problemen im beruflichen und/oder sozialen/familiären Bereich geführt.</label>
+      <div class="options">
+        <label><input type="radio" name="q22" value="0" required>0</label>
+        <label><input type="radio" name="q22" value="1">1</label>
+        <label><input type="radio" name="q22" value="2">2</label>
+        <label><input type="radio" name="q22" value="3">3</label>
+      </div>
+    </div>
+
+    <div>
+      <small>Bitte prüfen Sie, ob alle Fragen beantwortet wurden.</small>
+    </div>
+
     <button type="submit">Absenden</button>
   </form>
 </body>
